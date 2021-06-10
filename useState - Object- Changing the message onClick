@@ -1,0 +1,29 @@
+import React, { useState } from 'react';
+
+const UseStateObject = () => {
+  const [person,setPerson] = useState({
+    name: 'Peter',
+    age: 24,
+    message:'This is Message from Peter.'
+  })
+const changeMessage = () => {
+  // {...person} is used a spread operator.
+  // spread operator is a useful and quick syntax for adding 
+  // items to arrays, combining arrays or objects,
+  // and spreading an array out into a function's arguments.
+  setPerson({ ...person, message: 'Changed the message'})
+}
+
+  return (
+    <>
+      <h3>{person.name}</h3>
+      <h3>{person.age}</h3>
+      <h3>{person.message}</h3>
+    <button className="btn" onClick={changeMessage} >
+      Change Message
+    </button>
+    </>
+  );
+};
+
+export default UseStateObject;
